@@ -1,0 +1,45 @@
+# Default configuration for lane-pedestrian-capstone
+
+# Lane Detection Configuration
+lane_detection:
+  roi_vertices:
+    # Format: [x, y] points defining polygon mask
+    - [100, 720]
+    - [550, 450]
+    - [750, 450]
+    - [1180, 720]
+  canny_low_threshold: 50
+  canny_high_threshold: 150
+  gaussian_kernel_size: 5
+  hough_rho: 1
+  hough_theta: 0.017453292519943295  # np.pi/180
+  hough_threshold: 20
+  hough_min_line_length: 20
+  hough_max_line_gap: 300
+
+# Pedestrian Detection Configuration
+pedestrian_detection:
+  model_path: "models/yolov8n.pt"
+  confidence_threshold: 0.5
+  nms_threshold: 0.45
+
+# Posture Analysis Configuration
+posture_analysis:
+  model_path: "models/posture_classifier.pkl"
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+# Decision Making Configuration
+decision_making:
+  stop_distance_threshold: 10.0
+  slow_distance_threshold: 20.0
+  crossing_confidence_threshold: 0.6
+  waiting_confidence_threshold: 0.7
+  lane_deviation_threshold: 0.2
+
+# Visualization Configuration
+visualization:
+  show_lanes: true
+  show_pedestrians: true
+  show_poses: true
+  show_decision: true
