@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Capstone Project - Lane & Pedestrian Detection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0077b6;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      background: #333;
+      color: white;
+    }
+    .diagram {
+      background: #e3f2fd;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-style: italic;
+      color: #555;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Lane Detection & Pedestrian Posture Analysis</h1>
+  <p>Software-based Capstone Project for Autonomous Driving</p>
+</header>
+
+<section>
+  <h2>Problem Statement</h2>
+  <p>
+    This project develops a software system that detects lane boundaries in real-time using edge detection techniques and 
+    predicts pedestrian crossing intent based on posture analysis. The system works entirely in a simulated or video environment.
+  </p>
+</section>
+
+<section>
+  <h2>Software Architecture</h2>
+  <ul>
+    <li><strong>Input:</strong> Pre-recorded datasets (KITTI, Cityscapes) or simulation (CARLA, Udacity).</li>
+    <li><strong>Lane Detection:</strong> Canny edge detection → ROI masking → Hough Transform or polynomial fitting.</li>
+    <li><strong>Pedestrian Detection:</strong> YOLOv8/SSD model for bounding boxes.</li>
+    <li><strong>Posture Analysis:</strong> MediaPipe/OpenPose keypoint extraction → classification into standing, walking, crossing.</li>
+    <li><strong>Decision Making:</strong> Rule-based system using lane + pedestrian info.</li>
+    <li><strong>Output:</strong> Annotated video frames + simulated control commands.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Modules</h2>
+  <ul>
+    <li><strong>Lane Detection Module:</strong> Detects road lanes using OpenCV edge detection & line fitting.</li>
+    <li><strong>Pedestrian Detection Module:</strong> Detects people in the scene using deep learning models.</li>
+    <li><strong>Posture Analysis Module:</strong> Classifies posture to predict movement intent.</li>
+    <li><strong>Decision Module:</strong> Combines inputs to decide whether to maintain speed, slow, or stop.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Tech Stack</h2>
+  <ul>
+    <li>Python</li>
+    <li>OpenCV, NumPy</li>
+    <li>YOLOv8 / SSD</li>
+    <li>MediaPipe Pose / OpenPose</li>
+    <li>CARLA / Udacity Self-Driving Car Simulator</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Workflow Diagram</h2>
+  <img src="workflow_diagram.png" alt="Workflow Diagram" style="max-width:100%; border-radius:8px;">
+</section>
+
+
+<section>
+  <h2>Development Phases</h2>
+  <ol>
+    <li>Dataset/Simulator setup.</li>
+    <li>Implement lane detection pipeline.</li>
+    <li>Integrate pedestrian detection & posture classification.</li>
+    <li>Develop decision-making logic.</li>
+    <li>Test and evaluate in simulation.</li>
+  </ol>
+</section>
+
+<footer>
+  &copy; 2025 Himanshu Sekhar Sahoo - Capstone Project
+</footer>
+
+</body>
+</html>
