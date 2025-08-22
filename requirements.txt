@@ -1,0 +1,9 @@
+numpy
+opencv-python
+PyYAML
+ultralytics
+mediapipe
+scikit-learn
+matplotlib
+black
+flake8
